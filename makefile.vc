@@ -1,0 +1,8 @@
+SYCLFLAGS	=	-fsycl
+MKLFLAGS	=	-foffload-static-lib="%MKLROOT%"\lib\intel64\mkl_sycl.lib -static  -lmkl_intel_ilp64.lib -lmkl_tbb_thread.lib -lmkl_core.lib -lsycl -lOpenCL
+
+helloSYCL.exe: helloSYCL.cpp
+	dpcpp -g3 $(SYCLFLAGS) $(MKLFLAGS) helloSYCL.cpp -o helloSYCL.exe
+
+clean:
+	del helloSYCL.exe

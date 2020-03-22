@@ -12,6 +12,19 @@
             "cStandard": "c11",
             "cppStandard": "c++17",
             "intelliSenseMode": "clang-x64"
+        },
+        {
+            "name": "Windows",
+            "includePath": [
+                "${workspaceFolder}",
+                "${ONEAPI_ROOT}/compiler/latest/windows/lib/clang/10.0.0/include",
+                "${ONEAPI_ROOT}/mkl/latest/include"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/clang",
+            "cStandard": "c11",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
         }
     ],
     "version": 4

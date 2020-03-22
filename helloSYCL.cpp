@@ -23,10 +23,11 @@ int main()
         std::vector<cl::sycl::device> allDevices = cl::sycl::device::get_devices();
 
         // We pick first available device
-        cl::sycl::device myDevice = allDevices[2];
+        cl::sycl::device myDevice = allDevices[1];
 
         // Print out device name
-        std::cout << "Device Name: " << myDevice.get_info<cl::sycl::info::device::name>() << std::endl;
+        for (auto i = 0; i < allDevices.size(); i++)
+            std::cout << "Device Name: " << i << " " << allDevices[i].get_info<cl::sycl::info::device::name>() << std::endl;
 
         // We can only submit jobs in a queue on a device
         cl::sycl::queue myQueue(myDevice);
